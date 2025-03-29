@@ -11,10 +11,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Install Boost test
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+      - name: Install GoogleTest
+      - run: sudo apt-get update && sudo apt-get install libgtest-dev -y
+      - name: Configure CMake
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
       - run: cmake --build .
       - run: cmake --build . --target test
