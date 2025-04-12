@@ -1,0 +1,1 @@
+#define GOOGLE_TEST_MODULE test_version#include "lib.h"#include <gtest/gtest.h>TEST(TestVersion, TestValidVersion) {    ASSERT_EQ(version() > 0);}
