@@ -1,1 +1,1 @@
-#define GOOGLE_TEST_MODULE test_version#include "lib.h"#include <gtest/gtest.h>TEST(TestVersion, TestValidVersion) {    ASSERT_GT(version() > 0);}
+#define GOOGLE_TEST_MODULE test_version#include "lib.h"#include <gtest/gtest.h>TEST(TestVersion, TestValidVersion) {    ASSERT_GT(version(), 0);}
